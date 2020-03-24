@@ -1,13 +1,13 @@
 import React, { Component } from "react";
+import './MemoryCard.css'
 
 class MemoryCard extends Component {
     render() {
         return (
-            <div>
-                <h1>
-                    CARD
-                </h1>
+            <div className="MemoryCard">
+                <img className="logo" src="https://www.digitalcrafts.com/img/digitalcrafts-logo-white-y.png"></img>
             </div>
+            
         );
     }
 }

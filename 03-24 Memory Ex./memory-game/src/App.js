@@ -1,5 +1,5 @@
 import React from 'react';
-import MemoryCard from "./components/MemoryCard)"
+import MemoryCard from './components/MemoryCard'
 import './App.css';
 
 function App() {
@@ -9,7 +9,30 @@ function App() {
         <h1>Memory Game</h1>
         <h2 className="App-subtitle">Match Cards to Win</h2>
       </header>
-      <MemoryCard />
+      <div>
+        <MemoryCard />
+        <MemoryCard />
+        <MemoryCard />
+        <MemoryCard />
+      </div>
+      <div>
+        <MemoryCard />
+        <MemoryCard />
+        <MemoryCard />
+        <MemoryCard />
+      </div>
+      <div>
+        <MemoryCard />
+        <MemoryCard />
+        <MemoryCard />
+        <MemoryCard />
+      </div>
+      <div>
+        <MemoryCard />
+        <MemoryCard />
+        <MemoryCard />
+        <MemoryCard />
+      </div>
     </div>
   );
 }
