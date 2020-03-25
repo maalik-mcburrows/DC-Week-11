@@ -4,7 +4,7 @@ import './MemoryCard.css'
 class MemoryCard extends Component {
     render() {
         return (
-            <div className="MemoryCard">
+            <div className="MemoryCard" onClick={this.clickHandler}>
                 <div className="MemoryCardInner">
                     <div className="MemoryCardBack">
                         <img className="logo" src="https://www.digitalcrafts.com/img/digitalcrafts-logo-white-y.png"></img>
@@ -15,9 +15,11 @@ class MemoryCard extends Component {
                 </div>
                 
             </div>
-                
-            
         );
+    }
+
+    clickHandler() {
+        alert("card clicked");
     }
 }
 
