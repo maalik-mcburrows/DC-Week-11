@@ -2,12 +2,26 @@ import React, { Component } from "react";
 import './MemoryCard.css'
 
 class MemoryCard extends Component {
-    render() {
+    
+    state = { isFlipped: false };
+    
+    clickHandler() {
+        this.setState({ isFlipped: !this.state.isFlipped });
+        console.log("flipped");
+    };
 
-        const memoryCardInnerClass = "MemoryCardInner" 
-        if(!this.state.isFlipped) {
-            memoryCardInnerClass.concat(" flipped");
+    render() {
+        // this is where sean defined 'isFlipped'
+        // const { isFlipped } = this.state;
+
+        var memoryCardInnerClass = "MemoryCardInner" 
+        if(this.state.isFlipped) {
+            memoryCardInnerClass = memoryCardInnerClass.concat(" flipped");
         }
+
+        // this is the ternary he used, I just used an if statement
+        // const memoryCardInnerClass =
+        // 'MemoryCardInner ' + (isFlipped === true && 'flipped');
 
         return (
             <div className="MemoryCard" onClick={this.clickHandler.bind(this)}>
@@ -23,15 +37,10 @@ class MemoryCard extends Component {
         );
     }
 
-    constructor() {
-        super();
-        this.state = { isFlipped: false };
-    }
-
-    clickHandler() {
-        this.setState({ isFlipped: !this.state.isFlipped });
-        console.log("flipped");
-    }
+    // constructor() {
+    //     super();
+        
+    
 
 }
 
