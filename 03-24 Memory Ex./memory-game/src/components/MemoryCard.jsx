@@ -5,15 +5,15 @@ class MemoryCard extends Component {
     render() {
 
         const memoryCardInnerClass = "MemoryCardInner" 
-        if(this.state.isFlipped = true) {
+        if(!this.state.isFlipped) {
             memoryCardInnerClass.concat(" flipped");
         }
 
         return (
-            <div className="MemoryCard" onClick={this.clickHandler}>
+            <div className="MemoryCard" onClick={this.clickHandler.bind(this)}>
                 <div className={memoryCardInnerClass}>
                     <div className="MemoryCardBack">
-                        <img className="logo" src="https://www.digitalcrafts.com/img/digitalcrafts-logo-white-y.png"></img>
+                        <img alt="logo" className="logo" src="https://www.digitalcrafts.com/img/digitalcrafts-logo-white-y.png"></img>
                     </div>
                     <div className="MemoryCardFront">
                         ∆
@@ -30,6 +30,7 @@ class MemoryCard extends Component {
 
     clickHandler() {
         this.setState({ isFlipped: !this.state.isFlipped });
+        console.log("flipped");
     }
 
 }
