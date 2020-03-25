@@ -3,9 +3,15 @@ import './MemoryCard.css'
 
 class MemoryCard extends Component {
     render() {
+
+        const memoryCardInnerClass = "MemoryCardInner" 
+        if(this.state.isFlipped = true) {
+            memoryCardInnerClass.concat(" flipped");
+        }
+
         return (
             <div className="MemoryCard" onClick={this.clickHandler}>
-                <div className="MemoryCardInner">
+                <div className={memoryCardInnerClass}>
                     <div className="MemoryCardBack">
                         <img className="logo" src="https://www.digitalcrafts.com/img/digitalcrafts-logo-white-y.png"></img>
                     </div>
@@ -13,7 +19,6 @@ class MemoryCard extends Component {
                         ∆
                     </div>
                 </div>
-                
             </div>
         );
     }
@@ -24,7 +29,7 @@ class MemoryCard extends Component {
     }
 
     clickHandler() {
-        this.setState(!this.state.isFlipped);
+        this.setState({ isFlipped: !this.state.isFlipped });
     }
 
 }
