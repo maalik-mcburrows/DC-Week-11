@@ -18,9 +18,15 @@ class MemoryCard extends Component {
         );
     }
 
-    clickHandler() {
-        alert("card clicked");
+    constructor() {
+        super();
+        this.state = { isFlipped: false };
     }
+
+    clickHandler() {
+        this.setState(!this.state.isFlipped);
+    }
+
 }
 
 export default MemoryCard;
