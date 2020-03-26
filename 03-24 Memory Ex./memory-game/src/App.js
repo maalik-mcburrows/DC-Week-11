@@ -35,6 +35,13 @@ class App extends Component {
   }
 
   render(){
+
+    const cardsJSX = this.state.deck.map(
+      (card, index) => {
+        return <MemoryCard />
+      }
+    );
+
     return (
       <div className="App">
         <header className="App-header">
