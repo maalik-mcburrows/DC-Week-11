@@ -5,7 +5,11 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {deck: [], pickedCards: []}
   }
+
+  
+
   render(){
     return (
       <div className="App">
