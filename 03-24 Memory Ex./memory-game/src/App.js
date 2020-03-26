@@ -49,28 +49,16 @@ class App extends Component {
           <h2 className="App-subtitle">Match Cards to Win</h2>
         </header>
         <div>
-          <MemoryCard />
-          <MemoryCard />
-          <MemoryCard />
-          <MemoryCard />
+          {cardsJSX.slice(0,4)}
         </div>
         <div>
-          <MemoryCard />
-          <MemoryCard />
-          <MemoryCard />
-          <MemoryCard />
+          {cardsJSX.slice(4,8)}
         </div>
         <div>
-          <MemoryCard />
-          <MemoryCard />
-          <MemoryCard />
-          <MemoryCard />
+          {cardsJSX.slice(8,12)}
         </div>
         <div>
-          <MemoryCard />
-          <MemoryCard />
-          <MemoryCard />
-          <MemoryCard />
+          {cardsJSX.slice(12,16)}
         </div>
       </div>
     );
