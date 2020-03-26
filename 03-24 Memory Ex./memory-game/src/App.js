@@ -4,7 +4,7 @@ import './App.css';
 
 function generateDeck() {
   const symbols = [`∆`,` ß`, `£`, `§`,`•`, `$`, `+`, `ø`]
-  deck = []
+  let deck = []
 
   for (let i = 0; i < 16; i++) {
     deck.push(
@@ -25,7 +25,7 @@ function shuffle(deck) {
       const j = Math.floor(Math.random() * (i + 1));
       [deck[i], deck[j]] = [deck[j], deck[i]];
   }
-  return a;
+  return deck;
 }
 
 class App extends Component {
