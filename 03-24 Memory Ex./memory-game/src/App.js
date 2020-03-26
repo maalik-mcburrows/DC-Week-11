@@ -38,7 +38,7 @@ class App extends Component {
 
     const cardsJSX = this.state.deck.map(
       (card, index) => {
-        return <MemoryCard isFlipped = {card.isFlipped} symbol = {card.symbol} />
+        return <MemoryCard key = {index} isFlipped = {card.isFlipped} symbol = {card.symbol} />
       }
     );
 
