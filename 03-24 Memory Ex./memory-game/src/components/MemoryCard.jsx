@@ -18,7 +18,7 @@ class MemoryCard extends Component {
         // const { isFlipped } = this.state;
 
         var memoryCardInnerClass = "MemoryCardInner" 
-        if(this.state.isFlipped) {
+        if(this.props.isFlipped) {
             memoryCardInnerClass = memoryCardInnerClass.concat(" flipped");
         }
 
