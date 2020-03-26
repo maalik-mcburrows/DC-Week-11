@@ -2,10 +2,23 @@ import React, { Component } from 'react';
 import MemoryCard from './components/MemoryCard'
 import './App.css';
 
+function generateDeck() {
+  const symbols = "`∆`,` ß`, `£`, `§`,`•`, `$`, `+`, `ø`"
+  deck = []
+
+  for (let i = 0; i < 16; i++) {
+    i = {
+      isFlipped: false,
+      symbol: [i%8]
+    };
+    deck = deck + i
+  };
+}
+
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {deck: [], pickedCards: []}
+  state = {
+    deck: [], 
+    pickedCards: []
   }
 
   

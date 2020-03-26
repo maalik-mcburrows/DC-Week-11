@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import './MemoryCard.css'
+import App from "../App";
+import './MemoryCard.css';
 
 class MemoryCard extends Component {
     
