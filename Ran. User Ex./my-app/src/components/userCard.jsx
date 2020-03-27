@@ -9,7 +9,10 @@ class UserCard extends Component {
             const response = await fetch("https://randomuser.me/api/?results=1");
             const data = await response.json(); 
             this.setState({
-                user: data.results.gender
+                firstName: data.results[0].name.first,
+                
+                email: data.results[0].email,
+                gender: data.results[0].gender
             })
             console.log(data);
 
@@ -17,16 +20,22 @@ class UserCard extends Component {
 
         } catch(error) {
             this.setState({
-                user: error.message
+                firstName: error.message,
+                email: error.message,
+                gender: error.message
             })
         }
     }
 
     render() {
-        const { user } = this.state;
+        const { email, gender, firstName } = this.state;
         return (
             <p>
-                {user}
+                {firstName}
+                <br></br>
+                {email}
+                <br></br>
+                {gender}
             </p>
         );
     }
