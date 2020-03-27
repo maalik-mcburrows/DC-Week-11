@@ -34,10 +34,6 @@ class App extends Component {
     pickedCards: []
   }
 
-  
-
-  
-
   pickCard(cardIndex) {
     if(this.state.deck[cardIndex].isFlipped) {
       return;
@@ -55,6 +51,15 @@ class App extends Component {
         return card;
       }
     );
+
+      if(newPickedCards.length === 2) {
+        let card1Index = newPickedCards[0];
+        let card2Index = newPickedCards[1];
+        if(newDeck[card1Index].symbol === newDeck[card2Index].symbol) {
+          // unflip cards
+        }
+        let newPickedCards = [];
+      }
 
     this.setState({deck: newDeck, pickedCards: newPickedCards})
   }
