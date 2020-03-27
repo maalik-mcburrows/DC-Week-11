@@ -2,17 +2,7 @@ import React, { Component } from "react";
 import './MemoryCard.css';
 
 class MemoryCard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { isFlipped: false };
-
-    }
     
-    clickHandler() {
-        this.setState({ isFlipped: !this.state.isFlipped });
-        console.log("flipped");
-    };
-
     render() {
         // this is where sean defined 'isFlipped'
         // const { isFlipped } = this.state;
