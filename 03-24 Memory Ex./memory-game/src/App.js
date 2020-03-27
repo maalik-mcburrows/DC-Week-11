@@ -41,7 +41,6 @@ class App extends Component {
     let cardToFlip = {...this.state.deck[cardIndex]};
     cardToFlip.isFlipped = true;
 
-    let newPickedCards = this.state.pickedCards.concat(cardIndex);
 
     let newDeck = this.state.deck.map(
       (card, index) => {
@@ -51,14 +50,16 @@ class App extends Component {
         return card;
       }
     );
+    
+    let newPickedCards = this.state.pickedCards.concat(cardIndex);
 
       if(newPickedCards.length === 2) {
-        let card1Index = newPickedCards[0];
-        let card2Index = newPickedCards[1];
+        const card1Index = newPickedCards[0];
+        const card2Index = newPickedCards[1];
         if(newDeck[card1Index].symbol === newDeck[card2Index].symbol) {
-          this.unflipCards(card1Index, card2Index)
+          setTimeout(this.unflipCards.bind(this, card1Index, card2Index), 1000)
         }
-        let newPickedCards = [];
+        newPickedCards = [];
       }
 
     this.setState({deck: newDeck, pickedCards: newPickedCards})
