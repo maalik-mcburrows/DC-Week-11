@@ -19,7 +19,6 @@ function generateDeck() {
   return deck;
 }
 
-
 function shuffle(deck) {
   for (let i = deck.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -33,6 +32,7 @@ class App extends Component {
     deck: generateDeck(), 
     pickedCards: []
   }
+
 
   pickCard(cardIndex) {
     if(this.state.deck[cardIndex].isFlipped) {
@@ -56,12 +56,28 @@ class App extends Component {
         let card1Index = newPickedCards[0];
         let card2Index = newPickedCards[1];
         if(newDeck[card1Index].symbol === newDeck[card2Index].symbol) {
-          // unflip cards
+          this.unflipCards(card1Index, card2Index)
         }
         let newPickedCards = [];
       }
 
     this.setState({deck: newDeck, pickedCards: newPickedCards})
+  }
+
+  unflipCards(card1Index, card2Index) {
+    let card1 = {...this.state.deck[card1Index]};
+    let card2 = {...this.state.deck[card2Index]};
+    card1.isFlipped = false;
+    card2.isFlipped = false;
+    // this next part comes from step 7 part 6 ask for someone to explain logic
+    let newDeck = this.state.deck.map((card, index) => {
+      if(card1Index === index || card2Index === index) {
+        card.isFlipped = false;
+        return card;
+      }
+      return card;
+    });
+    this.setState({deck: newDeck});
   }
   
   render(){
