@@ -6,8 +6,25 @@ const UserCard = props => {
     return(
         <div>
             <img src={user.picture.large} alt="User Pic"></img>
+            <p>Name: 
+                {" " + user.name.title + ". "}{user.name.first + " "}{user.name.last}
+            </p>
+            <br></br>
+            <p>Location:
+            {" " + user.location.street.number + " "}{user.location.street.name + " "}{user.location.postcode}
+            </p>
             <p>
-                {user.name.title}{user.name.first}{user.name.last}
+            {user.location.city + ", "}{user.location.state + " "}{user.location.country}
+            </p>
+            <br></br>
+            <p>Contact Info:
+            {" Email - " + user.email}
+            </p>
+            <p>
+            {" Home Phone - " + user.phone}
+            </p>
+            <p>
+                {" Cell Phone - " + user.cell}
             </p>
         </div>
     );
